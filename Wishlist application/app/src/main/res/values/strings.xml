@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">mp2</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">Wishlista zakupów</string>
+    <string name="second_fragment_label">Podgląd wpisu</string>
+    <string name="next">Dalej</string>
+    <string name="previous">Wstecz</string>
+    <string name="map_label">Wybierz lokalizacje</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+</resources>

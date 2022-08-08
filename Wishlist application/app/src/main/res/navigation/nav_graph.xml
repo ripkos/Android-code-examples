@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/wishListFragment">
+
+    <fragment
+        android:id="@+id/wishListFragment"
+        android:name="com.example.mp2.WishListFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_wish_list">
+
+        <action
+            android:id="@+id/wishList_wishAdd"
+            app:destination="@id/wishAddFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/wishAddFragment"
+        android:name="com.example.mp2.AddWishFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_wish_add">
+
+        <action
+            android:id="@+id/wishAdd_wishList"
+            app:destination="@id/wishListFragment" />
+        <argument
+            android:name="wishID"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="isEdit"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+</navigation>

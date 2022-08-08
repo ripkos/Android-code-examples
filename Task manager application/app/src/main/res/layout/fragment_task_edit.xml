@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".task_edit">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="ZAPISZ"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/btn_save"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/placeholderPriority2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Priorytet"
+                android:textColor="@color/teal_700"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/placeholderName2"
+                app:layout_constraintTop_toBottomOf="@+id/radio_option_group" />
+
+            <TextView
+                android:id="@+id/placeholderProgress2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Postep"
+                android:textColor="@color/teal_700"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/placeholderName2"
+                app:layout_constraintTop_toBottomOf="@+id/task_priority_edit" />
+
+            <TextView
+                android:id="@+id/placeholderTime2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Czas wykonania"
+                android:textColor="@color/teal_700"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/placeholderName2"
+                app:layout_constraintTop_toBottomOf="@+id/task_edit_date" />
+
+            <TextView
+                android:id="@+id/placeholderDeadline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Deadline"
+                android:textColor="@color/teal_700"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/placeholderName2"
+                app:layout_constraintTop_toBottomOf="@+id/task_edit_name" />
+
+            <TextView
+                android:id="@+id/placeholderName2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nazwa"
+                android:textColor="@color/teal_700"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.25"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.100000024" />
+
+            <FrameLayout
+                android:id="@+id/frameLayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:rotation="270"
+                android:scaleX="6"
+                android:scaleY="6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/placeholderProgress2">
+
+                <ProgressBar
+                    android:id="@+id/circle_out"
+                    style="@style/Widget.AppCompat.ProgressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:indeterminate="false"
+                    android:indeterminateBehavior="cycle"
+                    android:indeterminateOnly="false"
+                    android:max="100"
+                    android:progress="100"
+                    android:progressDrawable="@drawable/inner_circle" />
+
+                <ProgressBar
+                    android:id="@+id/task_progress_show"
+                    style="@style/Widget.AppCompat.ProgressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:indeterminate="false"
+                    android:indeterminateBehavior="cycle"
+                    android:indeterminateOnly="false"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/circle" />
+
+            </FrameLayout>
+
+            <RatingBar
+                android:id="@+id/task_priority_show"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:clickable="false"
+                android:numStars="5"
+                android:rating="5"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:stepSize="0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/placeholderPriority2" />
+
+            <EditText
+                android:id="@+id/task_edit_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Nazwa"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/placeholderName2"
+                app:layout_constraintTop_toBottomOf="@+id/placeholderName2" />
+
+            <EditText
+                android:id="@+id/task_edit_estimated_int"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="3"
+                android:inputType="number"
+                android:text="5"
+                app:layout_constraintBottom_toBottomOf="@+id/radio_option_group"
+                app:layout_constraintStart_toStartOf="@+id/placeholderName2"
+                app:layout_constraintTop_toBottomOf="@+id/placeholderTime2" />
+
+            <RadioGroup
+                android:id="@+id/radio_option_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:checkedButton="@id/option_hours"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toEndOf="@+id/task_edit_estimated_int"
+                app:layout_constraintTop_toBottomOf="@+id/placeholderTime2">
+
+                <RadioButton
+                    android:id="@+id/option_hours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Godziny" />
+
+                <RadioButton
+                    android:id="@+id/option_days"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="Dni" />
+            </RadioGroup>
+
+            <SeekBar
+                android:id="@+id/task_priority_edit"
+                android:layout_width="120dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="16dp"
+                android:max="7"
+                android:progress="5"
+                android:scaleX="2"
+                android:scaleY="2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/task_priority_show" />
+
+            <SeekBar
+                android:id="@+id/task_progres_edit"
+                android:layout_width="120dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginBottom="50dp"
+                android:max="20"
+                android:progress="0"
+                android:scaleX="2"
+                android:scaleY="2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/frameLayout2" />
+
+            <TextView
+                android:id="@+id/task_progres_label_show"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginBottom="64dp"
+                android:text="0%"
+                app:layout_constraintBottom_toTopOf="@+id/frameLayout2"
+                app:layout_constraintStart_toEndOf="@+id/frameLayout2" />
+
+            <DatePicker
+                android:id="@+id/task_edit_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:calendarViewShown="false"
+                android:datePickerMode="spinner"
+                android:dayOfWeekTextAppearance="@style/Theme.MyApplication"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/placeholderDeadline2" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageButton
+            android:id="@+id/btn_back2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="?attr/homeAsUpIndicator"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
